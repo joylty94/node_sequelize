@@ -1,11 +1,11 @@
 import express from 'express'
-import { addUser } from '../../controllers/v1/user.controller'
+import { deleteUser } from '../../controllers/v1/user.controller'
 
 const router = express.Router()
 
 router.route('/')
-  .get(
-    addUser
-  )
+    .get(
+        deleteUser
+    )
 
 export default router

@@ -1,7 +1,7 @@
 import moment from 'moment'
 import { models } from '../../models'
 
-const join = async (req, res, next) => {
+const addUser = async (req, res, next) => {
     try {
         const users = await models.User.create(
             {
@@ -28,7 +28,19 @@ const get = async (req, res, next) => {
     }
 }
 
+const deleteUser = async (req, res, next) => {
+    try {
+        const users = await models.User.destroy({
+            where: { id: 1 }
+        })
+        return res.json(users)
+    } catch (e) {
+        next(e)
+    }
+}
+
 export {
-    join,
-    get
+    addUser,
+    get,
+    deleteUser
 }
