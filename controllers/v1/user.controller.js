@@ -1,12 +1,12 @@
 import moment from 'moment'
 import { models } from '../../models'
 
-const get = async (req, res, next) => {
+const join = async (req, res, next) => {
     try {
         const users = await models.User.create(
             {
-                email: 'test56@test.com',
-                password: 'test123456',
+                email: 'test567@test.com',
+                password: 'test1234567',
                 createdAt: moment().format('YYYY-MM-DD hh:mm:ss'),
                 updatedAt: moment().format('YYYY-MM-DD hh:mm:ss')
             }
@@ -19,5 +19,5 @@ const get = async (req, res, next) => {
 }
 
 export {
-    get
+    join
 }
